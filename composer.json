@@ -1,0 +1,30 @@
+{
+  "name": "jannbar/brainiac",
+  "description": "A schema validation library, heavily inspired by Zod.",
+  "type": "library",
+  "require-dev": {
+    "laravel/pint": "^1.15",
+    "pestphp/pest": "^2.34"
+  },
+  "scripts": {
+    "lint": "pint",
+    "test": "pest"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Jannbar\\Brainiac\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jannik Baranczyk",
+      "email": "jannik.baranczyk@gmail.com"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
