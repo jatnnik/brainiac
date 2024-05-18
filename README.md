@@ -12,8 +12,8 @@ At the moment, the following data types are supported:
 
 - [Arrays](#arrays)
 - [Booleans](#booleans)
-- [Strings](#strings)
 - [Numbers](#numbers)
+- [Strings](#strings)
 
 You may either use the `parse` or `safe_parse` method.
 `parse` will throw an exception when validation fails, while `safe_parse` will always
