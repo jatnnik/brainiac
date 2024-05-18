@@ -34,3 +34,10 @@ it('should throw for too long arrays', function () {
             ->parse(['foo', 'bar'])
     )->toThrow(LongArrayException::class);
 });
+
+it('should not throw when using safe_parse', function () {
+    // Act & Assert.
+    expect(fn () => Brainiac::array()->safe_parse(42))
+        ->not()
+        ->toThrow(InvalidArrayException::class);
+});

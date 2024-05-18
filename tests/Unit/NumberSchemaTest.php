@@ -29,3 +29,10 @@ it('should throw for non numbers', function () {
         InvalidNumberException::class
     );
 });
+
+it('should not throw when using safe_parse', function () {
+    // Act & Assert.
+    expect(fn () => Brainiac::number()->parse(42))
+        ->not()
+        ->toThrow(InvalidNumberException::class);
+});

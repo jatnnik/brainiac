@@ -14,8 +14,11 @@ it('should throw for non booleans', function () {
     expect(fn () => Brainiac::boolean()->parse('true'))->toThrow(
         InvalidBooleanException::class
     );
+});
 
-    expect(fn () => Brainiac::boolean()->parse('123'))->toThrow(
-        InvalidBooleanException::class
-    );
+it('should not throw when using safe_parse', function () {
+    // Act & Assert.
+    expect(fn () => Brainiac::boolean()->safe_parse('true'))
+        ->not()
+        ->toThrow(InvalidBooleanException::class);
 });

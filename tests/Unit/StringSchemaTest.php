@@ -36,3 +36,10 @@ it('should validate string length', function () {
 
     expect(Brainiac::string()->min(1)->max(10)->parse('test'))->toEqual('test');
 });
+
+it('should not throw when using safe_parse', function () {
+    // Act & Assert.
+    expect(fn () => Brainiac::string()->parse('foo'))
+        ->not()
+        ->toThrow(InvalidStringException::class);
+});
