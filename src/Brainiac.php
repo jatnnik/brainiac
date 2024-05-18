@@ -2,12 +2,18 @@
 
 namespace Jannbar\Brainiac;
 
+use Jannbar\Brainiac\Schemas\ArraySchema;
 use Jannbar\Brainiac\Schemas\BooleanSchema;
 use Jannbar\Brainiac\Schemas\NumberSchema;
 use Jannbar\Brainiac\Schemas\StringSchema;
 
 class Brainiac
 {
+    public static function array(): ArraySchema
+    {
+        return new ArraySchema();
+    }
+
     public static function boolean(): BooleanSchema
     {
         return new BooleanSchema();
