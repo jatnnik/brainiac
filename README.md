@@ -10,10 +10,10 @@ A PHP schema validation library, heavily inspired by [Zod](https://zod.dev).
 
 At the moment, the following data types are supported:
 
-- Arrays
-- Booleans
-- Strings
-- Numbers
+- [Arrays](#arrays)
+- [Booleans](#booleans)
+- [Strings](#strings)
+- [Numbers](#numbers)
 
 You may either use the `parse` or `safe_parse` method.
 `parse` will throw an exception when validation fails, while `safe_parse` will always
