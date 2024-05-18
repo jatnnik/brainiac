@@ -43,6 +43,7 @@ use Jannbar/Brainiac/Brainiac;
 Brainiac::array()->parse([4, 2]);
 Brainiac::array()->min(1)->parse([4, 2]);
 Brainiac::array()->max(10)->parse([4, 2]);
+Brainiac::array()->of(Brainiac::number())->parse([4, 2]);
 ```
 
 ### Booleans
