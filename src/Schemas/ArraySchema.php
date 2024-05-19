@@ -9,61 +9,61 @@ use Jannbar\Brainiac\Exceptions\ShortArrayException;
 
 class ArraySchema extends Schema
 {
-  private int $min;
+    private int $min;
 
-  private int $max;
+    private int $max;
 
-  private Schema $item_schema;
+    private Schema $item_schema;
 
-  public function min(int $min): self
-  {
-    $this->min = $min;
+    public function min(int $min): self
+    {
+        $this->min = $min;
 
-    return $this;
-  }
-
-  public function max(int $max): self
-  {
-    $this->max = $max;
-
-    return $this;
-  }
-
-  public function of(Schema $item_schema): self
-  {
-    $this->item_schema = $item_schema;
-
-    return $this;
-  }
-
-  /**
-   * @param array<mixed> $value
-   * @return array<mixed>
-   */
-  protected function parse_value(array $value): array
-  {
-    if (!is_array($value)) {
-      throw InvalidArrayException::make($value);
+        return $this;
     }
 
-    if (isset($this->item_schema)) {
-      foreach ($value as $item) {
-        $result = $this->item_schema->safe_parse($item);
+    public function max(int $max): self
+    {
+        $this->max = $max;
 
-        if (!$result["success"]) {
-          throw new Exception("Invalid item type.");
+        return $this;
+    }
+
+    public function of(Schema $item_schema): self
+    {
+        $this->item_schema = $item_schema;
+
+        return $this;
+    }
+
+    /**
+     * @param  array<mixed>  $value
+     * @return array<mixed>
+     */
+    protected function parse_value(array $value): array
+    {
+        if (! is_array($value)) {
+            throw InvalidArrayException::make($value);
         }
-      }
-    }
 
-    if (isset($this->min) && count($value) < $this->min) {
-      throw ShortArrayException::make($value, $this->min);
-    }
+        if (isset($this->item_schema)) {
+            foreach ($value as $item) {
+                $result = $this->item_schema->safe_parse($item);
 
-    if (isset($this->max) && count($value) > $this->max) {
-      throw LongArrayException::make($value, $this->max);
-    }
+                if (! $result['success']) {
+                    throw new Exception('Invalid item type.');
+                }
+            }
+        }
 
-    return $value;
-  }
+        if (isset($this->min) && count($value) < $this->min) {
+            throw ShortArrayException::make($value, $this->min);
+        }
+
+        if (isset($this->max) && count($value) > $this->max) {
+            throw LongArrayException::make($value, $this->max);
+        }
+
+        return $value;
+    }
 }
