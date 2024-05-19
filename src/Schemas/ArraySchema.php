@@ -9,40 +9,44 @@ use Jannbar\Brainiac\Exceptions\ShortArrayException;
 
 class ArraySchema extends Schema
 {
-  private $min;
+  private int $min;
 
-  private $max;
+  private int $max;
 
-  private $item_schema;
+  private Schema $item_schema;
 
-  public function min(int $min)
+  public function min(int $min): self
   {
     $this->min = $min;
 
     return $this;
   }
 
-  public function max(int $max)
+  public function max(int $max): self
   {
     $this->max = $max;
 
     return $this;
   }
 
-  public function of(Schema $item_schema)
+  public function of(Schema $item_schema): self
   {
     $this->item_schema = $item_schema;
 
     return $this;
   }
 
-  protected function parse_value($value)
+  /**
+   * @param array<mixed> $value
+   * @return array<mixed>
+   */
+  protected function parse_value(array $value): array
   {
     if (!is_array($value)) {
       throw InvalidArrayException::make($value);
     }
 
-    if (!is_null($this->item_schema)) {
+    if (isset($this->item_schema)) {
       foreach ($value as $item) {
         $result = $this->item_schema->safe_parse($item);
 
@@ -52,11 +56,11 @@ class ArraySchema extends Schema
       }
     }
 
-    if (!is_null($this->min) && count($value) < $this->min) {
+    if (isset($this->min) && count($value) < $this->min) {
       throw ShortArrayException::make($value, $this->min);
     }
 
-    if (!is_null($this->max) && count($value) > $this->max) {
+    if (isset($this->max) && count($value) > $this->max) {
       throw LongArrayException::make($value, $this->max);
     }
 

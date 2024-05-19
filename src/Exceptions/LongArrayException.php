@@ -2,15 +2,18 @@
 
 namespace Jannbar\Brainiac\Exceptions;
 
-class LongArrayException extends \Exception
+final class LongArrayException extends \Exception
 {
-    public static function make($value, $expected)
-    {
-        $actual_length = count($value);
-        $term = $expected === 1 ? 'item' : 'items';
+  /**
+   * @param array<mixed> $value
+   */
+  public static function make(array $value, int $expected): self
+  {
+    $actual_length = count($value);
+    $term = $expected === 1 ? "item" : "items";
 
-        return new static(
-            "Array has too many items. Expected at most {$expected} {$term}, {$actual_length} given."
-        );
-    }
+    return new self(
+      "Array has too many items. Expected at most {$expected} {$term}, {$actual_length} given."
+    );
+  }
 }

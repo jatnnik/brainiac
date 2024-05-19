@@ -2,12 +2,12 @@
 
 namespace Jannbar\Brainiac\Exceptions;
 
-class InvalidArrayException extends \Exception
+final class InvalidArrayException extends \Exception
 {
-    public static function make($value)
-    {
-        $type = gettype($value);
+  public static function make(mixed $value): self
+  {
+    $type = gettype($value);
 
-        return new static("Expected an array, received `{$type}`.");
-    }
+    return new self("Expected an array, received `{$type}`.");
+  }
 }
