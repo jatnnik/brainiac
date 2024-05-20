@@ -2,12 +2,12 @@
 
 namespace Jannbar\Brainiac\Exceptions;
 
-class InvalidNumberException extends \Exception
+final class InvalidNumberException extends \Exception
 {
-    public static function make($value)
+    public static function make(mixed $value): self
     {
         $type = gettype($value);
 
-        return new static("Expected a number, received `{$type}`.");
+        return new self("Expected a number, received `{$type}`.");
     }
 }

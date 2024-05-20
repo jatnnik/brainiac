@@ -2,12 +2,12 @@
 
 namespace Jannbar\Brainiac\Exceptions;
 
-class InvalidBooleanException extends \Exception
+final class InvalidBooleanException extends \Exception
 {
-    public static function make($value)
+    public static function make(mixed $value): self
     {
         $type = gettype($value);
 
-        return new static("Expected a boolean, received `{$type}`.");
+        return new self("Expected a boolean, received `{$type}`.");
     }
 }

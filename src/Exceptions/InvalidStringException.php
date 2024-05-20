@@ -2,12 +2,12 @@
 
 namespace Jannbar\Brainiac\Exceptions;
 
-class InvalidStringException extends \Exception
+final class InvalidStringException extends \Exception
 {
-    public static function make($value)
+    public static function make(mixed $value): self
     {
         $type = gettype($value);
 
-        return new static("Expected a string, received `{$type}`.");
+        return new self("Expected a string, received `{$type}`.");
     }
 }

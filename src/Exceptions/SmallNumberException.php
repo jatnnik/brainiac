@@ -2,11 +2,11 @@
 
 namespace Jannbar\Brainiac\Exceptions;
 
-class SmallNumberException extends \Exception
+final class SmallNumberException extends \Exception
 {
-    public static function make($value, $expected)
+    public static function make(int $value, int $expected): self
     {
-        return new static(
+        return new self(
             "Number is too small. Expected a number greater than {$expected}, received {$value}."
         );
     }

@@ -2,11 +2,11 @@
 
 namespace Jannbar\Brainiac\Exceptions;
 
-class BigNumberException extends \Exception
+final class BigNumberException extends \Exception
 {
-    public static function make($value, $expected)
+    public static function make(int $value, int $expected): self
     {
-        return new static(
+        return new self(
             "Number is too big. Expected a number smaller than {$expected}, received {$value}."
         );
     }

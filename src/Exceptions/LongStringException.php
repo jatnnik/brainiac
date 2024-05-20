@@ -2,14 +2,14 @@
 
 namespace Jannbar\Brainiac\Exceptions;
 
-class LongStringException extends \Exception
+final class LongStringException extends \Exception
 {
-    public static function make($value, $expected)
+    public static function make(string $value, int $expected): self
     {
         $actual_length = strlen($value);
         $term = $expected === 1 ? 'character' : 'characters';
 
-        return new static(
+        return new self(
             "String is too long. Expected a string with at most {$expected} {$term}, {$actual_length} given."
         );
     }
