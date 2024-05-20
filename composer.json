@@ -5,12 +5,14 @@
   "require-dev": {
     "laravel/pint": "^1.15",
     "pestphp/pest": "^2.34",
-    "phpstan/phpstan": "^1.11"
+    "phpstan/phpstan": "^1.11",
+    "pestphp/pest-plugin-type-coverage": "^2.8"
   },
   "scripts": {
     "analyse": "phpstan analyse src tests --level 6",
     "lint": "pint",
-    "test": "pest"
+    "test": "pest",
+    "test:coverage": "pest --type-coverage"
   },
   "license": "MIT",
   "autoload": {
