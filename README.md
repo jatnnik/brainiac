@@ -2,6 +2,10 @@
 
 A PHP schema validation library, heavily inspired by [Zod](https://zod.dev).
 
+## Quality of Code
+
+Brainiacs code is fully tested and compliant with [PHPStan](https://phpstan.org) at max level.
+
 ## Installation
 
 `composer require jannbar/brainiac`
