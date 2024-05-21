@@ -4,12 +4,15 @@ namespace Jannbar\Brainiac\Schemas;
 
 abstract class Schema
 {
-    public function parse($value)
+    public function parse(mixed $value): mixed
     {
         return $this->parse_value($value);
     }
 
-    public function safe_parse($value)
+    /**
+     * @return array{'success': bool, "data"?: mixed, "error"?: string}
+     */
+    public function safe_parse(mixed $value): array
     {
         try {
             $result = $this->parse($value);
@@ -26,5 +29,5 @@ abstract class Schema
         }
     }
 
-    abstract protected function parse_value($value);
+    abstract protected function parse_value(mixed $value): mixed;
 }

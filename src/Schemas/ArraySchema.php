@@ -9,11 +9,11 @@ use Jannbar\Brainiac\Exceptions\ShortArrayException;
 
 class ArraySchema extends Schema
 {
-    private int $min;
+    private ?int $min;
 
-    private int $max;
+    private ?int $max;
 
-    private Schema $item_schema;
+    private ?Schema $item_schema;
 
     public function min(int $min): self
     {
@@ -37,10 +37,9 @@ class ArraySchema extends Schema
     }
 
     /**
-     * @param  array<mixed>  $value
      * @return array<mixed>
      */
-    protected function parse_value(array $value): array
+    protected function parse_value(mixed $value): array
     {
         if (! is_array($value)) {
             throw InvalidArrayException::make($value);

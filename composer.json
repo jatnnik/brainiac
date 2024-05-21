@@ -8,7 +8,7 @@
     "phpstan/phpstan": "^1.11"
   },
   "scripts": {
-    "analyse": "phpstan analyse src tests --level 6",
+    "analyse": "phpstan analyse src tests/Unit --level max",
     "lint": "pint",
     "test": "pest"
   },
