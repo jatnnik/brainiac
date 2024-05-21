@@ -70,6 +70,8 @@ use Jannbar/Brainiac/Brainiac;
 Brainiac::number()->parse(42);
 Brainiac::number()->min(1)->parse(42);
 Brainiac::number()->max(10)->parse(42);
+Brainiac::number()->int()->parse(42);
+Brainiac::number()->float()->parse(43.5);
 ```
 
 ### Strings
