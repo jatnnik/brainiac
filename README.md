@@ -8,7 +8,9 @@ Brainiacs code is fully tested and compliant with [PHPStan](https://phpstan.org)
 
 ## Installation
 
-`composer require jannbar/brainiac`
+```bash
+composer require jannbar/brainiac
+```
 
 ## Usage
 
