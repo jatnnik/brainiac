@@ -5,6 +5,8 @@ use Jannbar\Brainiac\Exceptions\BigNumberException;
 use Jannbar\Brainiac\Exceptions\InvalidFloatException;
 use Jannbar\Brainiac\Exceptions\InvalidIntegerException;
 use Jannbar\Brainiac\Exceptions\InvalidNumberException;
+use Jannbar\Brainiac\Exceptions\NegativeNumberException;
+use Jannbar\Brainiac\Exceptions\PositiveNumberException;
 use Jannbar\Brainiac\Exceptions\SmallNumberException;
 
 it('should parse numbers', function () {
@@ -47,4 +49,24 @@ it('should not throw when using safe_parse', function () {
     expect(fn () => Brainiac::number()->parse(42))
         ->not()
         ->toThrow(InvalidNumberException::class);
+});
+
+it('should throw for negative numbers', function () {
+    // Act & Assert.
+    expect(fn () => Brainiac::number()->positive()->parse(-1))->toThrow(PositiveNumberException::class);
+});
+
+it('should validate positive numbers', function () {
+    // Act & Assert.
+    expect(Brainiac::number()->positive()->parse(1))->toEqual(1);
+});
+
+it('should throw for positive numbers', function () {
+    // Act & Assert.
+    expect(fn () => Brainiac::number()->negative()->parse(1))->toThrow(NegativeNumberException::class);
+});
+
+it('should validate negative numbers', function () {
+    // Act & Assert.
+    expect(Brainiac::number()->negative()->parse(-1))->toEqual(-1);
 });

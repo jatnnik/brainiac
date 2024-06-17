@@ -20,8 +20,7 @@ At the moment, the following data types are supported:
 - [Strings](#strings)
 
 You may either use the `parse` or `safe_parse` method.
-`parse` will throw an exception when validation fails, while `safe_parse` will always
-return an associative array with the following shape, based on validation success:
+`parse` will throw an exception when validation fails, while `safe_parse` will always return an associative array with the following shape, based on validation success:
 
 ```php
 // On validation success.
@@ -72,6 +71,8 @@ Brainiac::number()->min(1)->parse(42);
 Brainiac::number()->max(10)->parse(42);
 Brainiac::number()->int()->parse(42);
 Brainiac::number()->float()->parse(43.5);
+Brainiac::number()->positive()->parse(1);
+Brainiac::number()->negative()->parse(-1);
 ```
 
 ### Strings

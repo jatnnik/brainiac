@@ -6,6 +6,8 @@ use Jannbar\Brainiac\Exceptions\BigNumberException;
 use Jannbar\Brainiac\Exceptions\InvalidFloatException;
 use Jannbar\Brainiac\Exceptions\InvalidIntegerException;
 use Jannbar\Brainiac\Exceptions\InvalidNumberException;
+use Jannbar\Brainiac\Exceptions\NegativeNumberException;
+use Jannbar\Brainiac\Exceptions\PositiveNumberException;
 use Jannbar\Brainiac\Exceptions\SmallNumberException;
 
 class NumberSchema extends Schema
@@ -17,6 +19,10 @@ class NumberSchema extends Schema
     private ?bool $integer;
 
     private ?bool $float;
+
+    private ?bool $positive;
+
+    private ?bool $negative;
 
     public function min(int $min): self
     {
@@ -46,6 +52,20 @@ class NumberSchema extends Schema
         return $this;
     }
 
+    public function positive(): self
+    {
+        $this->positive = true;
+
+        return $this;
+    }
+
+    public function negative(): self
+    {
+        $this->negative = true;
+
+        return $this;
+    }
+
     protected function parse_value(mixed $value): float|int
     {
         if (! is_numeric($value)) {
@@ -61,6 +81,14 @@ class NumberSchema extends Schema
 
         if (isset($this->float) && (int) $value === $value) {
             throw InvalidFloatException::make();
+        }
+
+        if (isset($this->positive) && $value < 0) {
+            throw PositiveNumberException::make();
+        }
+
+        if (isset($this->negative) && $value > 0) {
+            throw NegativeNumberException::make();
         }
 
         if (isset($this->min) && $value < $this->min) {
