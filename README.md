@@ -87,4 +87,5 @@ use Jannbar/Brainiac/Brainiac;
 Brainiac::string()->parse('foo');
 Brainiac::string()->min(1)->parse('foo');
 Brainiac::string()->max(10)->parse('foo');
+Brainiac::string()->literal('foo')->parse('foo');
 ```

@@ -2,6 +2,7 @@
 
 use Jannbar\Brainiac\Brainiac;
 use Jannbar\Brainiac\Exceptions\InvalidStringException;
+use Jannbar\Brainiac\Exceptions\LiteralStringException;
 use Jannbar\Brainiac\Exceptions\LongStringException;
 use Jannbar\Brainiac\Exceptions\ShortStringException;
 
@@ -42,4 +43,13 @@ it('should not throw when using safe_parse', function () {
     expect(fn () => Brainiac::string()->parse('foo'))
         ->not()
         ->toThrow(InvalidStringException::class);
+});
+
+it('should validate literal strings', function () {
+    // Act & Assert.
+    expect(fn () => Brainiac::string()->literal('foo')->parse('bar'))->toThrow(LiteralStringException::class);
+
+    expect(fn () => Brainiac::string()->literal('foo')->parse('foo'))
+        ->not()
+        ->toThrow(LiteralStringException::class);
 });

@@ -3,6 +3,7 @@
 namespace Jannbar\Brainiac\Schemas;
 
 use Jannbar\Brainiac\Exceptions\InvalidStringException;
+use Jannbar\Brainiac\Exceptions\LiteralStringException;
 use Jannbar\Brainiac\Exceptions\LongStringException;
 use Jannbar\Brainiac\Exceptions\ShortStringException;
 
@@ -11,6 +12,8 @@ class StringSchema extends Schema
     private ?int $min;
 
     private ?int $max;
+
+    private ?string $literal;
 
     public function min(int $min): self
     {
@@ -26,10 +29,21 @@ class StringSchema extends Schema
         return $this;
     }
 
+    public function literal(string $literal): self
+    {
+        $this->literal = $literal;
+
+        return $this;
+    }
+
     protected function parse_value(mixed $value): string
     {
         if (! is_string($value)) {
             throw InvalidStringException::make($value);
+        }
+
+        if (isset($this->literal) && $value !== $this->literal) {
+            throw LiteralStringException::make($value, $this->literal);
         }
 
         if (isset($this->min) && strlen($value) < $this->min) {
