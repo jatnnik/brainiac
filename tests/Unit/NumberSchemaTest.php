@@ -5,6 +5,7 @@ use Jannbar\Brainiac\Exceptions\BigNumberException;
 use Jannbar\Brainiac\Exceptions\InvalidFloatException;
 use Jannbar\Brainiac\Exceptions\InvalidIntegerException;
 use Jannbar\Brainiac\Exceptions\InvalidNumberException;
+use Jannbar\Brainiac\Exceptions\LiteralNumberException;
 use Jannbar\Brainiac\Exceptions\NegativeNumberException;
 use Jannbar\Brainiac\Exceptions\PositiveNumberException;
 use Jannbar\Brainiac\Exceptions\SmallNumberException;
@@ -69,4 +70,13 @@ it('should throw for positive numbers', function () {
 it('should validate negative numbers', function () {
     // Act & Assert.
     expect(Brainiac::number()->negative()->parse(-1))->toEqual(-1);
+});
+
+it('should validate literal numbers', function () {
+    // Act & Assert.
+    expect(fn () => Brainiac::number()->literal(42)->parse(24))->toThrow(LiteralNumberException::class);
+
+    expect(fn () => Brainiac::number()->literal(42)->parse(42))
+        ->not()
+        ->toThrow(LiteralNumberException::class);
 });

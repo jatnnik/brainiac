@@ -75,6 +75,7 @@ Brainiac::number()->int()->parse(42);
 Brainiac::number()->float()->parse(43.5);
 Brainiac::number()->positive()->parse(1);
 Brainiac::number()->negative()->parse(-1);
+Brainiac::number()->literal(42)->parse(42);
 ```
 
 ### Strings
