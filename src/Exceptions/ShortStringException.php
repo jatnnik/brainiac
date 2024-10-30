@@ -1,6 +1,6 @@
 <?php
 
-namespace Jannbar\Brainiac\Exceptions;
+namespace Jatnnik\Brainiac\Exceptions;
 
 final class ShortStringException extends \Exception
 {

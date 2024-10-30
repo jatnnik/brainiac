@@ -1,8 +1,8 @@
 <?php
 
-namespace Jannbar\Brainiac\Schemas;
+namespace Jatnnik\Brainiac\Schemas;
 
-use Jannbar\Brainiac\Exceptions\InvalidBooleanException;
+use Jatnnik\Brainiac\Exceptions\InvalidBooleanException;
 
 class BooleanSchema extends Schema
 {

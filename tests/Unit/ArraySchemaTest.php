@@ -1,9 +1,9 @@
 <?php
 
-use Jannbar\Brainiac\Brainiac;
-use Jannbar\Brainiac\Exceptions\InvalidArrayException;
-use Jannbar\Brainiac\Exceptions\LongArrayException;
-use Jannbar\Brainiac\Exceptions\ShortArrayException;
+use Jatnnik\Brainiac\Brainiac;
+use Jatnnik\Brainiac\Exceptions\InvalidArrayException;
+use Jatnnik\Brainiac\Exceptions\LongArrayException;
+use Jatnnik\Brainiac\Exceptions\ShortArrayException;
 
 it('should parse arrays', function () {
     // Act & Assert.

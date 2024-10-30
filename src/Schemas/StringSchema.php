@@ -1,11 +1,11 @@
 <?php
 
-namespace Jannbar\Brainiac\Schemas;
+namespace Jatnnik\Brainiac\Schemas;
 
-use Jannbar\Brainiac\Exceptions\InvalidStringException;
-use Jannbar\Brainiac\Exceptions\LiteralStringException;
-use Jannbar\Brainiac\Exceptions\LongStringException;
-use Jannbar\Brainiac\Exceptions\ShortStringException;
+use Jatnnik\Brainiac\Exceptions\InvalidStringException;
+use Jatnnik\Brainiac\Exceptions\LiteralStringException;
+use Jatnnik\Brainiac\Exceptions\LongStringException;
+use Jatnnik\Brainiac\Exceptions\ShortStringException;
 
 class StringSchema extends Schema
 {

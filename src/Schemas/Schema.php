@@ -1,6 +1,6 @@
 <?php
 
-namespace Jannbar\Brainiac\Schemas;
+namespace Jatnnik\Brainiac\Schemas;
 
 abstract class Schema
 {

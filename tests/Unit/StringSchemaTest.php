@@ -1,10 +1,10 @@
 <?php
 
-use Jannbar\Brainiac\Brainiac;
-use Jannbar\Brainiac\Exceptions\InvalidStringException;
-use Jannbar\Brainiac\Exceptions\LiteralStringException;
-use Jannbar\Brainiac\Exceptions\LongStringException;
-use Jannbar\Brainiac\Exceptions\ShortStringException;
+use Jatnnik\Brainiac\Brainiac;
+use Jatnnik\Brainiac\Exceptions\InvalidStringException;
+use Jatnnik\Brainiac\Exceptions\LiteralStringException;
+use Jatnnik\Brainiac\Exceptions\LongStringException;
+use Jatnnik\Brainiac\Exceptions\ShortStringException;
 
 it('should parse strings', function () {
     // Act.

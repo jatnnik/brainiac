@@ -1,6 +1,6 @@
 {
-  "name": "jannbar/brainiac",
-  "description": "A schema validation library, heavily inspired by Zod.",
+  "name": "jatnnik/brainiac",
+  "description": "A schema validation library for PHP, heavily inspired by Zod.",
   "type": "library",
   "require-dev": {
     "laravel/pint": "^1.15",
@@ -10,12 +10,17 @@
   "scripts": {
     "analyse": "phpstan analyse src tests/Unit --level max",
     "lint": "pint",
-    "test": "pest"
+    "test": "pest",
+    "check-all": [
+      "@lint",
+      "@analyse",
+      "@test"
+    ]
   },
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Jannbar\\Brainiac\\": "src/"
+      "Jatnnik\\Brainiac\\": "src/"
     }
   },
   "authors": [

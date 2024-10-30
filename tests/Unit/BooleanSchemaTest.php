@@ -1,7 +1,7 @@
 <?php
 
-use Jannbar\Brainiac\Brainiac;
-use Jannbar\Brainiac\Exceptions\InvalidBooleanException;
+use Jatnnik\Brainiac\Brainiac;
+use Jatnnik\Brainiac\Exceptions\InvalidBooleanException;
 
 it('should parse booleans', function () {
     // Act & Assert.

@@ -9,7 +9,7 @@ Brainiacs code is fully tested and compliant with [PHPStan](https://phpstan.org)
 ## Installation
 
 ```bash
-composer require jannbar/brainiac
+composer require jatnnik/brainiac
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ $failure = [
 ```php
 <?php
 
-use Jannbar/Brainiac/Brainiac;
+use Jatnnik\Brainiac\Brainiac;
 
 Brainiac::array()->parse([4, 2]);
 Brainiac::array()->min(1)->parse([4, 2]);
@@ -56,7 +56,7 @@ Brainiac::array()->of(Brainiac::number())->parse([4, 2]);
 ```php
 <?php
 
-use Jannbar/Brainiac/Brainiac;
+use Jatnnik\Brainiac\Brainiac;
 
 Brainiac::boolean()->parse(true);
 ```
@@ -66,7 +66,7 @@ Brainiac::boolean()->parse(true);
 ```php
 <?php
 
-use Jannbar/Brainiac/Brainiac;
+use Jatnnik\Brainiac\Brainiac;
 
 Brainiac::number()->parse(42);
 Brainiac::number()->min(1)->parse(42);
@@ -83,7 +83,7 @@ Brainiac::number()->literal(42)->parse(42);
 ```php
 <?php
 
-use Jannbar/Brainiac/Brainiac;
+use Jatnnik\Brainiac\Brainiac;
 
 Brainiac::string()->parse('foo');
 Brainiac::string()->min(1)->parse('foo');

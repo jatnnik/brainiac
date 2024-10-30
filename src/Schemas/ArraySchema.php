@@ -1,11 +1,11 @@
 <?php
 
-namespace Jannbar\Brainiac\Schemas;
+namespace Jatnnik\Brainiac\Schemas;
 
 use Exception;
-use Jannbar\Brainiac\Exceptions\InvalidArrayException;
-use Jannbar\Brainiac\Exceptions\LongArrayException;
-use Jannbar\Brainiac\Exceptions\ShortArrayException;
+use Jatnnik\Brainiac\Exceptions\InvalidArrayException;
+use Jatnnik\Brainiac\Exceptions\LongArrayException;
+use Jatnnik\Brainiac\Exceptions\ShortArrayException;
 
 class ArraySchema extends Schema
 {

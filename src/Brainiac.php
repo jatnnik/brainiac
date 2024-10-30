@@ -1,11 +1,11 @@
 <?php
 
-namespace Jannbar\Brainiac;
+namespace Jatnnik\Brainiac;
 
-use Jannbar\Brainiac\Schemas\ArraySchema;
-use Jannbar\Brainiac\Schemas\BooleanSchema;
-use Jannbar\Brainiac\Schemas\NumberSchema;
-use Jannbar\Brainiac\Schemas\StringSchema;
+use Jatnnik\Brainiac\Schemas\ArraySchema;
+use Jatnnik\Brainiac\Schemas\BooleanSchema;
+use Jatnnik\Brainiac\Schemas\NumberSchema;
+use Jatnnik\Brainiac\Schemas\StringSchema;
 
 class Brainiac
 {

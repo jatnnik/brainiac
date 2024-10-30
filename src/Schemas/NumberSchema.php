@@ -1,15 +1,15 @@
 <?php
 
-namespace Jannbar\Brainiac\Schemas;
+namespace Jatnnik\Brainiac\Schemas;
 
-use Jannbar\Brainiac\Exceptions\BigNumberException;
-use Jannbar\Brainiac\Exceptions\InvalidFloatException;
-use Jannbar\Brainiac\Exceptions\InvalidIntegerException;
-use Jannbar\Brainiac\Exceptions\InvalidNumberException;
-use Jannbar\Brainiac\Exceptions\LiteralNumberException;
-use Jannbar\Brainiac\Exceptions\NegativeNumberException;
-use Jannbar\Brainiac\Exceptions\PositiveNumberException;
-use Jannbar\Brainiac\Exceptions\SmallNumberException;
+use Jatnnik\Brainiac\Exceptions\BigNumberException;
+use Jatnnik\Brainiac\Exceptions\InvalidFloatException;
+use Jatnnik\Brainiac\Exceptions\InvalidIntegerException;
+use Jatnnik\Brainiac\Exceptions\InvalidNumberException;
+use Jatnnik\Brainiac\Exceptions\LiteralNumberException;
+use Jatnnik\Brainiac\Exceptions\NegativeNumberException;
+use Jatnnik\Brainiac\Exceptions\PositiveNumberException;
+use Jatnnik\Brainiac\Exceptions\SmallNumberException;
 
 class NumberSchema extends Schema
 {
