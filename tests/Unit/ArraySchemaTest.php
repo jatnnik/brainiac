@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Jatnnik\Brainiac\Brainiac;
 use Jatnnik\Brainiac\Exceptions\InvalidArrayException;
 use Jatnnik\Brainiac\Exceptions\LongArrayException;

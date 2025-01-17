@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Jatnnik\Brainiac\Exceptions;
 
 final class LiteralNumberException extends \Exception

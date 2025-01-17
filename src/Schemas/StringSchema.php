@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Jatnnik\Brainiac\Schemas;
 
 use Jatnnik\Brainiac\Exceptions\InvalidStringException;
@@ -46,11 +48,11 @@ class StringSchema extends Schema
             throw LiteralStringException::make($value, $this->literal);
         }
 
-        if (isset($this->min) && strlen($value) < $this->min) {
+        if (isset($this->min) && mb_strlen($value) < $this->min) {
             throw ShortStringException::make($value, $this->min);
         }
 
-        if (isset($this->max) && strlen($value) > $this->max) {
+        if (isset($this->max) && mb_strlen($value) > $this->max) {
             throw LongStringException::make($value, $this->max);
         }
 
