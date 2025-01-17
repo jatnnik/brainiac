@@ -1,0 +1,8 @@
+{
+  "preset": "laravel",
+  "rules": {
+    "blank_line_after_opening_tag": true,
+    "declare_strict_types": true,
+    "protected_to_private": true
+  }
+}
