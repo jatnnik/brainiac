@@ -11,21 +11,21 @@ class Brainiac
 {
     public static function array(): ArraySchema
     {
-        return new ArraySchema();
+        return new ArraySchema;
     }
 
     public static function boolean(): BooleanSchema
     {
-        return new BooleanSchema();
+        return new BooleanSchema;
     }
 
     public static function string(): StringSchema
     {
-        return new StringSchema();
+        return new StringSchema;
     }
 
     public static function number(): NumberSchema
     {
-        return new NumberSchema();
+        return new NumberSchema;
     }
 }
