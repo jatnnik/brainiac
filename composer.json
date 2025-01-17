@@ -8,13 +8,14 @@
     "phpstan/phpstan": "^1.11"
   },
   "scripts": {
-    "analyse": "phpstan analyse src tests/Unit --level max",
     "lint": "pint",
-    "test": "pest",
-    "check-all": [
-      "@lint",
-      "@analyse",
-      "@test"
+    "test:lint": "pint --test",
+    "test:types": "phpstan analyse src tests/Unit --level max",
+    "test:unit": "pest --parallel",
+    "test": [
+      "@test:lint",
+      "@test:types",
+      "@test:unit"
     ]
   },
   "license": "MIT",
